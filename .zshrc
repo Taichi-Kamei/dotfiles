@@ -119,6 +119,8 @@ source $ZSH/oh-my-zsh.sh
 if [[ "$TERM" != "linux" ]]; then
   source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source /usr/share/fzf/key-bindings.zsh
+  source /usr/share/fzf/completion.zsh
 else
   # Optional: Use a dead-simple prompt for the TTY
   PROMPT='%n@%m %~ > '

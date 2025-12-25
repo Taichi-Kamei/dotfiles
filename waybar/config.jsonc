@@ -4,11 +4,11 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    "modules-left": ["workspaces"],
-    "modules-center": ["custom/music"],
-    "modules-right": ["pulseaudio", "battery", "clock", "custom/power"],
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "battery", "custom/power"],
     
-    "workspaces": {
+    "hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
          "format": " {icon} ",
@@ -27,7 +27,7 @@
         "escape": true,
         "interval": 3,
         "tooltip": true,
-        "exec": "playerctl metadata --format='{{ title }}'",
+        "exec": "playerctl metadata --format='{{ title }}' 2> /dev/null",
         "on-click": "playerctl play-pause",
         "max-length": 50
     },
@@ -39,8 +39,15 @@
         "format": "{:%H:%M}"
     },
 
-    "wifi": {
-        "format": ""
+    "network": {
+    "interface": "wlan0", // Replace with your interface if needed
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+    "format-disconnected": "󰤮 ",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"], // Ordered: Lowest to Highest strength
+    "interval": 5, // How often to poll for signal updates (in seconds)
+    "tooltip-format": "{essid} - {gwaddr} ",
+    "on-click": "iwgtk"
     },
 
     "bluetooth": {
@@ -53,10 +60,11 @@
             "critical": 15
         },
         "format": "{icon}",
-        "format-charging": "🔋",
+        "format-charging": "󰂄",
         "format-plugged": "🔌",
         "format-alt": "{icon}",
-        "format-icons": ""
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-click": "power-profiles-daemon"
     },
 
     "pulseaudio": {
@@ -67,12 +75,6 @@
             "default": ["", "", " "]
         },
         "on-click": "pavucontrol"
-    },
-
-    "custom/lock": {
-        "tooltip": false,
-        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-        "format": ""
     },
 
     "custom/power": {

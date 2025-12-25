@@ -7,7 +7,7 @@
 @define-color peach #ef9f76;
 @define-color yellow #e5c890;
 @define-color green #a6d189;
-@define-color teal #81c8be;
+@define-color teal #41645f;
 @define-color sky #99d1db;
 @define-color sapphire #85c1dc;
 @define-color blue #8caaee;
@@ -20,7 +20,10 @@
 @define-color overlay0 #737994;
 @define-color surface2 #626880;
 @define-color surface1 #51576d;
-@define-color surface0 #414559;
+@define-color surface0 rgba(15, 15, 20, 0.7);
 @define-color base #303446;
 @define-color mantle #292c3c;
 @define-color crust #232634;
+
+@define-color light_teal #81c8be;
+@define-color black rgba(0,0  ,0,1);
