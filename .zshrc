@@ -125,3 +125,5 @@ else
   # Optional: Use a dead-simple prompt for the TTY
   PROMPT='%n@%m %~ > '
 fi
+
+export QSYS_ROOTDIR="/home/ta1/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/25.1/quartus/sopc_builder/bin"

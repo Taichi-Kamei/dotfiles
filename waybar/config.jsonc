@@ -1,21 +1,41 @@
-
+[
 {
+
+    "name": "laptop",
+        "output": "eDP-1", // Your laptop monitor name
+        "modules-left": ["hyprland/workspaces"],
+        "hyprland/workspaces": {
+            "all-outputs": false
+        },
+
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 34, 
     // "width": 1280, // Waybar width
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "battery", "custom/power"],
     
-    "hyprland/workspaces": {
+    /*"hyprland/workspaces": {
          "disable-scroll": true,
          "sort-by-name": true,
          "format": " {icon} ",
          "format-icons": {
              "default": ""
          }
-     },
+     },*/
+
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "on-click": "activate",
+      "all-outputs": false,
+      "active-only": false,
+      "persistent-workspaces": {
+        "1": [], // Bound to specific monitors if needed
+        "2": []
+      }
+    },
 
     "tray": {
         "icon-size": 21,
@@ -33,7 +53,7 @@
     },
 
     "clock": {
-        "timezone": "Asia/Tokyo",
+        "timezone": "America/Vancouver",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": " 📅  {:%d/%m/%Y}",
         "format": "{:%H:%M}"
@@ -62,7 +82,8 @@
         "format": "{icon}",
         "format-charging": "󰂄",
         "format-plugged": "🔌",
-        "format-alt": "{icon}",
+        "format-alt": "{icon} {capacity}% ",
+        "tooltip-format": "{capacity}%",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "on-click": "power-profiles-daemon"
     },
@@ -80,7 +101,114 @@
     "custom/power": {
         "tooltip": false,
         "on-click": "wlogout &",
-	      "format": "⏻",
+	      "format": "⏻"
+    }
+    
+},
+{
+
+    "name": "external",
+        "output": "DP-1", // Your laptop monitor name
+        "modules-left": ["hyprland/workspaces"],
+        "hyprland/workspaces": {
+            "all-outputs": false
+        },
+
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 20, 
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "battery", "custom/power"],
+    
+    /*"hyprland/workspaces": {
+         "disable-scroll": true,
+         "sort-by-name": true,
+         "format": " {icon} ",
+         "format-icons": {
+             "default": ""
+         }
+     },*/
+
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "on-click": "activate",
+      "all-outputs": false,
+      "active-only": false,
+      "persistent-workspaces": {
+        "1": [], // Bound to specific monitors if needed
+        "2": []
+      }
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 3,
+        "tooltip": true,
+        "exec": "playerctl metadata --format='{{ title }}' 2> /dev/null",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+
+    "clock": {
+        "timezone": "America/Vancouver",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " 📅  {:%d/%m/%Y}",
+        "format": "{:%H:%M}"
+    },
+
+    "network": {
+    "interface": "wlan0", // Replace with your interface if needed
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+    "format-disconnected": "󰤮 ",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"], // Ordered: Lowest to Highest strength
+    "interval": 5, // How often to poll for signal updates (in seconds)
+    "tooltip-format": "{essid} - {gwaddr} ",
+    "on-click": "iwgtk"
+    },
+
+    "bluetooth": {
+        "format": ""
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "󰂄",
+        "format-plugged": "🔌",
+        "format-alt": "{icon} {capacity}% ",
+        "tooltip-format": "{capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "on-click": "power-profiles-daemon"
+    },
+
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+	      "format": "⏻"
     }
     
 }
+]

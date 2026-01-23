@@ -4,25 +4,28 @@
   font-family: FantasqueSansMono Nerd Font;
   font-size: 16px;
   min-height: 0;
+  padding: 0;
 }
 
 #waybar {
-  background: transparent; 
-  border-radius: 10px;
+  background: @surface0; 
+  border-radius: 0;
   color: @text;
-  margin: 5px 5px;
 }
 
 #workspaces {
-  border-radius: 1rem;
-  margin: 2px 0.4rem;
-  background-color: @surface0; 
+  border-radius: 0px 1rem 1rem 0rem;
+  margin-top: 4px;
+  margin-bottom: 1px;
+  background-color: @surface0;
 }
 
 #workspaces button {
   color: @white;
   border-radius: 1rem;
-  padding: 0px 0.5rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  margin-bottom: 0;
 }
 
 #workspaces button.active {
@@ -35,33 +38,37 @@
   border-radius: 1rem;
 }
 
+#clock {
+  color: @white;
+  font-weight: 600; 
+  font-size: 12pt;
+  background-color: @surface0;
+  border-radius: 0px 0px 1rem 1rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  
+  margin: 0px 10px;
+  
+}
+
 #custom-music,
 #tray,
 #network,
 #battery,
 #pulseaudio,
-#custom-lock,
-#custom-power {
+#custom-lock {
   background-color: @surface0;
   color: @white;
-  padding: 0.2rem 0.8rem;
-  margin: 2px 0px;
-  border: 1px;
-}
-
-#clock {
-  color: @white;
-  font-weight: 600;
-  background-color: @surface0;
-  border-radius: 0px 0px 1rem 1rem;
-  padding: 0px 2.5rem;
-  margin: 0px 10px;
+  padding: 0 1rem;
+  padding-bottom: 2px;
+  margin-top: 4px;
+  margin-bottom: 5px;
 }
 
 #battery { 
-  margin-right: 0.1rem;
-  padding: 0px 1.2rem;
-  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 0rem;
+  padding: 0px 0.6rem;
+  border-radius: 0px 0rem 0rem 0px;
 }
 
 #pulseaudio {
@@ -75,17 +82,17 @@
 }
   
 #custom-network{
-  color: @white;
-  margin-right: 3rem;
-  
+  color: @white;  
 }
 
 #custom-power {
-    margin: 2px 0.8rem;
-    padding: 0px 1rem; 
-    border-radius: 1rem;
+    border-radius: 0 0 0 0;
+    background-color: @surface0;
     color: @teal;
-    font-size: 22px;
+    font-size: 20px;
+    padding: 0 4px;
+    margin-top: 4px;
+    margin-bottom: 5px;
 }
 
 #tray {
