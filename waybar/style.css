@@ -13,23 +13,21 @@
   color: @text;
 }
 
-#workspaces {
-  border-radius: 0px 1rem 1rem 0rem;
-  margin-top: 4px;
-  margin-bottom: 1px;
-  background-color: @surface0;
+#workspaces { 
+  margin-top: 0;
+  margin-left: 2px; 
 }
 
 #workspaces button {
   color: @white;
   border-radius: 1rem;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
-  margin-bottom: 0;
+  padding-left: 2px;
+  padding-right: 2px;  
+  margin-left: 0;
 }
 
 #workspaces button.active {
-  color: @teal; 
+  color: @blue; 
   border-radius: 1rem;
 }
 
@@ -41,14 +39,8 @@
 #clock {
   color: @white;
   font-weight: 600; 
-  font-size: 12pt;
-  background-color: @surface0;
-  border-radius: 0px 0px 1rem 1rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  
-  margin: 0px 10px;
-  
+  font-size: 12pt;  
+  margin: 0px 10px; 
 }
 
 #custom-music,
@@ -56,19 +48,15 @@
 #network,
 #battery,
 #pulseaudio,
-#custom-lock {
-  background-color: @surface0;
-  color: @white;
-  padding: 0 1rem;
-  padding-bottom: 2px;
-  margin-top: 4px;
-  margin-bottom: 5px;
+#custom-lock { 
+  color: @white;   
+  margin-right: 10px;
+  padding-right: 10px;
 }
 
-#battery { 
-  margin-right: 0rem;
-  padding: 0px 0.6rem;
-  border-radius: 0px 0rem 0rem 0px;
+
+#battery {  
+  padding-right: 10px;
 }
 
 #pulseaudio {
@@ -82,17 +70,16 @@
 }
   
 #custom-network{
+  margin-right: 10px;
+  padding-right: 10px;
   color: @white;  
 }
 
 #custom-power {
-    border-radius: 0 0 0 0;
-    background-color: @surface0;
-    color: @teal;
+    color: @blue;
     font-size: 20px;
-    padding: 0 4px;
-    margin-top: 4px;
-    margin-bottom: 5px;
+    padding: 0 4px; 
+    margin-right: 10px; 
 }
 
 #tray {

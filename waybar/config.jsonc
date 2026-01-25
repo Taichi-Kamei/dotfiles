@@ -1,6 +1,5 @@
 [
 {
-
     "name": "laptop",
         "output": "eDP-1", // Your laptop monitor name
         "modules-left": ["hyprland/workspaces"],
@@ -15,16 +14,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "battery", "custom/power"],
-    
-    /*"hyprland/workspaces": {
-         "disable-scroll": true,
-         "sort-by-name": true,
-         "format": " {icon} ",
-         "format-icons": {
-             "default": ""
-         }
-     },*/
+    "modules-right": ["pulseaudio", "network", "battery", "custom/power"], 
 
     "hyprland/workspaces": {
       "format": "{name}",
@@ -32,8 +22,7 @@
       "all-outputs": false,
       "active-only": false,
       "persistent-workspaces": {
-        "1": [], // Bound to specific monitors if needed
-        "2": []
+        "*": 5 
       }
     },
 
@@ -80,8 +69,7 @@
             "critical": 15
         },
         "format": "{icon}",
-        "format-charging": "󰂄",
-        "format-plugged": "🔌",
+        "format-charging": "󰂄",  
         "format-alt": "{icon} {capacity}% ",
         "tooltip-format": "{capacity}%",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -90,12 +78,14 @@
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}  {volume}%",
-        "format-muted": "",
+        "format": "{icon}",
+        "format-muted": "墳",
         "format-icons": {
-            "default": ["", "", " "]
+            "default": ["奄", "", "墳"]
         },
+        "tooltip-format": "{volume}%",
         "on-click": "pavucontrol"
+
     },
 
     "custom/power": {
@@ -138,8 +128,7 @@
       "all-outputs": false,
       "active-only": false,
       "persistent-workspaces": {
-        "1": [], // Bound to specific monitors if needed
-        "2": []
+       "*": 5 
       }
     },
 
@@ -187,7 +176,7 @@
         },
         "format": "{icon}",
         "format-charging": "󰂄",
-        "format-plugged": "🔌",
+        
         "format-alt": "{icon} {capacity}% ",
         "tooltip-format": "{capacity}%",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
@@ -196,11 +185,12 @@
 
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon}  {volume}%",
-        "format-muted": "",
+        "format": "{icon}",
+        "format-muted": "墳",
         "format-icons": {
-            "default": ["", "", " "]
+            "default": ["奄", "", "墳"]
         },
+        "tooltip-format": "{volume}%",
         "on-click": "pavucontrol"
     },
 
