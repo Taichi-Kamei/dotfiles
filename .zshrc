@@ -136,4 +136,4 @@ alias ps="pacman -Qi"
 alias y="yay -S"
 alias ys="yay -Qi"
 
-alias yay="yay -Syu"
+alias yu="yay -Syu"
