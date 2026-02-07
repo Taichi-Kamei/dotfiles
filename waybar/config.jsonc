@@ -18,14 +18,19 @@
     "modules-right": ["pulseaudio", "network", "battery", "custom/power"], 
 
     "hyprland/workspaces": {
-      "format": "{name}",
+      "format": "{icon}",
       "on-click": "activate",
       "all-outputs": false,
       "active-only": false,
       "persistent-workspaces": {
-        "*": 5 
+       "*": 5 
+      },
+      "format-icons": {
+        "default": "⏺",
+        "active": "●"
       }
     },
+
 
     "tray": {
         "icon-size": 21,
@@ -124,12 +129,16 @@
      },*/
 
     "hyprland/workspaces": {
-      "format": "{name}",
+      "format": "{icon}",
       "on-click": "activate",
       "all-outputs": false,
       "active-only": false,
       "persistent-workspaces": {
        "*": 5 
+      },
+      "format-icons": {
+        "default": "●",
+        "active": "●"
       }
     },
 
