@@ -2,7 +2,7 @@ window {
     background: rgba(17, 17, 27, 0.8); 
     border-radius: 30px;
     border-bottom: 10px solid transparent;
-    margin: 0px 12px;
+    /* margin: 0px 12px; */
 }
 
 button {
