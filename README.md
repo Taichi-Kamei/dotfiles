@@ -1,0 +1,1 @@
+![](assets/waybar+dock.png)
