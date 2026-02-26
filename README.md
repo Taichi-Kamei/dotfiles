@@ -1,1 +1,1 @@
-[!alt text] (assets/waybar+dock.png)
+![](assets/waybar+dock.png)
