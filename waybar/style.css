@@ -4,86 +4,78 @@
   font-family: FantasqueSansMono Nerd Font;
   font-size: 16px;
   min-height: 0;
-  
 }
 
 #waybar {
   background: @surface0; 
-  border-radius: 0;
-  margin: 0;
   color: @text;
 }
 
 #workspaces { 
-  margin-top: 0;
-  margin-left: 5px; 
+  margin-left: 6px; 
 }
 
 #workspaces button {
   color: @white;
-  border-radius: 1rem;
   padding-left: 2px;
   padding-right: 2px;  
-  margin-left: 0;
 }
 
 #workspaces button.active {
   color: @blue; 
-  border-radius: 1rem;
   font-size: 10px;
 }
 
 #workspaces button:hover {
-  color: @teal;
-  border-radius: 1rem;
+  color: @sapphire;
+  background: transparent;
 }
 
 #clock {
   color: @white;
   font-weight: 600; 
   font-size: 12pt;  
-  margin: 0px 10px; 
+  margin: 0 2px;
+  padding: 0 8px;
 }
 
-#custom-music,
-#tray,
-#network,
-#battery,
-#pulseaudio,
-#custom-lock { 
+
+#network{ 
   color: @white;   
-  margin-right: 10px;
-  padding-right: 10px;
+  margin: 0 2px;
+  padding: 0 9px;
+  font-size: 15px;
 }
 
-
-#battery {  
-  padding-right: 0px;
+#battery{ 
+  color: @white;   
+  margin: 0 2px;
+  padding: 0 7px;
+  font-size: 15px;
 }
 
-#pulseaudio {
-  color: @white;
-  border-radius: 1rem 0px 0px 1rem; 
-}
-
-#custom-music {
-  color: @white;
-  border-radius: 1rem;
-}
-  
-#custom-network{
-  margin-right: 10px;
-  padding-right: 10px;
-  color: @white;  
+#pulseaudio{ 
+  color: @white;   
+  margin: 0 1px;
+  padding: 0 6px;
+  font-size: 15px;
 }
 
 #custom-power {
     color: @blue;
-    font-size: 20px;
-    padding: 0 0px;
-    margin-left: 4px;
-    margin-right: 15px; 
+    font-size: 21px;
+    padding: 0 4px;
+    margin-left: 1px;
+    margin-right: 10px;
 }
+
+#custom-music {
+  font-size: 12px;
+  color: @white;
+  margin-left: 10px;
+  border-radius: 1rem;
+}
+
 
 #tray {
   margin-right: 1rem;

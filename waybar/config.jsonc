@@ -1,18 +1,15 @@
-[
 {
     "name": "laptop",
-        "output": "eDP-1", // Your laptop monitor name
+        "output": ["eDP-1","DP-1", "DP-4","DP-5", "DP-6", "DP-7", "DP-8"], 
         "modules-left": ["hyprland/workspaces"],
         "hyprland/workspaces": {
             "all-outputs": false
         },
 
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
+    "layer": "top", 
+    "position": "top",
     "height": 20,
-    
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
+
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "battery", "custom/power"], 
@@ -27,10 +24,9 @@
       },
       "format-icons": {
         "default": "⏺",
-        "active": "●"
+        "active": "⏺"
       }
     },
-
 
     "tray": {
         "icon-size": 21,
@@ -38,13 +34,13 @@
     },
 
     "custom/music": {
-        "format": "  {}",
+        "format": "   {}",
         "escape": true,
         "interval": 3,
         "tooltip": true,
         "exec": "playerctl metadata --format='{{ title }}' 2> /dev/null",
         "on-click": "playerctl play-pause",
-        "max-length": 50
+        "max-length": 20
     },
 
     "clock": {
@@ -57,14 +53,14 @@
 
     "network": {
     "font-family": "Symbols Nerd Font Mono",
-    "interface": "wlan0", // Replace with your interface if needed
-    "format": "󰤮 ",
+    "interface": "wlan0", 
+    "format": "󰤮",
     "format-wifi": "{icon}",
     "format-ethernet": "󰈀 {ipaddr}/{cidr}",
-    "format-disconnected": "󰤮 ",
-    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"], // Ordered: Lowest to Highest strength
-    "interval": 5, // How often to poll for signal updates (in seconds)
-    "tooltip-format": "{essid} - {gwaddr} ",
+    "format-disconnected": "󰤮",
+    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+    "interval": 5, 
+    "tooltip-format": "{essid}",
     "on-click": "iwgtk"
     },
 
@@ -78,121 +74,17 @@
             "critical": 15
         },
         "format": "{icon}",
-        "format-charging": "󰂄",  
-        "format-alt": "{icon} {capacity}% ",
-        "tooltip-format": "{capacity}%",
+        "format-icons-charging": ["󰢟", "󰢜", "󰢝", "󰢞", "󰂆", "󰂇", "󰂈", "󰂉", "󰂊", "󰂋", "󰂅"],
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}%",
         "on-click": "power-profiles-daemon"
     },
 
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{icon}",
-        "format-muted": "婢",
+        "format-muted": "󰖁",
         "format-icons": {
-            "default": ["奄", "", "墳"]
-        },
-        "tooltip-format": "{volume}%",
-        "on-click": "pavucontrol"
-
-    },
-
-    "custom/power": {
-        "tooltip": false,
-        "on-click": "wlogout -b 5 --layout ~/dotfiles/wlogout/layout --css ~/dotfiles/wlogout/nova.css &",
-	      "format": "⏻"
-    }
-    
-},
-{
-
-    "name": "external",
-        "output": ["DP-1", "DP-4","DP-5", "DP-6", "DP-7", "DP-8"], 
-        "modules-left": ["hyprland/workspaces"],
-        "hyprland/workspaces": {
-            "all-outputs": false
-        },
-
-    "layer": "top", 
-    "position": "top", 
-    "height": 20, 
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "battery", "custom/power"],
-
-    "hyprland/workspaces": {
-      "format": "{icon}",
-      "on-click": "activate",
-      "all-outputs": false,
-      "active-only": false,
-      "persistent-workspaces": {
-       "*": 5 
-      },
-      "format-icons": {
-        "default": "●",
-        "active": "●"
-      }
-    },
-
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    },
-
-    "custom/music": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 3,
-        "tooltip": true,
-        "exec": "playerctl metadata --format='{{ title }}' 2> /dev/null",
-        "on-click": "playerctl play-pause",
-        "max-length": 50
-    },
-
-    "clock": {
-        "timezone": "America/Vancouver",
-       // "timezone": "America/Chicago",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": " 📅  {:%d/%m/%Y}",
-        "format": "{:%H:%M}"
-    },
-
-    "network": {
-    "interface": "wlan0", // Replace with your interface if needed
-    "format-wifi": "{icon}",
-    "format": "󰤮 ",
-    "format-ethernet": "󰈀 {ipaddr}/{cidr}",
-    "format-disconnected": "󰤮 ",
-    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"], // Ordered: Lowest to Highest strength
-    "interval": 5, // How often to poll for signal updates (in seconds)
-    "tooltip-format": "{essid} - {gwaddr} ",
-    "on-click": "iwgtk"
-    },
-
-    "bluetooth": {
-        "format": ""
-    },
-
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}",
-        "format-charging": "󰂄",
-        
-        "format-alt": "{icon} {capacity}% ",
-        "tooltip-format": "{capacity}%",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "on-click": "power-profiles-daemon"
-    },
-
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon}",
-        "format-muted": "婢",
-        "format-icons": {
-            "default": ["奄", "", "墳"]
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "tooltip-format": "{volume}%",
         "on-click": "pavucontrol"
@@ -205,4 +97,3 @@
     }
     
 }
-]
