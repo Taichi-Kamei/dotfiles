@@ -12,7 +12,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "battery", "custom/power"], 
+    "modules-right": ["pulseaudio", "custom/bluetooth", "network", "battery", "custom/power"], 
 
     "hyprland/workspaces": {
       "format": "{icon}",
@@ -61,11 +61,12 @@
     "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
     "interval": 5, 
     "tooltip-format": "{essid}",
-    "on-click": "iwgtk"
+    "on-click": "iwgtk &"
     },
 
-    "bluetooth": {
-        "format": ""
+    "custom/bluetooth": {
+        "format": "󰂯",
+        "on-click": "blueman-manager &"
     },
 
     "battery": {
