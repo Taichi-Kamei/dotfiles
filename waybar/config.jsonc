@@ -75,7 +75,8 @@
             "critical": 15
         },
         "format": "{icon}",
-        "format-icons-charging": ["󰢟", "󰢜", "󰢝", "󰢞", "󰂆", "󰂇", "󰂈", "󰂉", "󰂊", "󰂋", "󰂅"],
+        "format-charging": "󰂅",
+        "format-plugged": "󰁹",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
         "tooltip-format": "{capacity}%",
         "on-click": "power-profiles-daemon"
