@@ -130,11 +130,12 @@ else
 fi
 
 export QSYS_ROOTDIR="/home/ta1/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/25.1/quartus/sopc_builder/bin"
-
+export TERMINAL=kitty
 # Shortcuts
 
 alias p="sudo pacman -S"
 alias pq="pacman -Qi"
+alias ps="pacman -Ss"
 
 alias y="yay -S"
 alias yq="yay -Qi"
