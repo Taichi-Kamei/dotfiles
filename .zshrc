@@ -133,6 +133,8 @@ export QSYS_ROOTDIR="/home/ta1/.cache/yay/quartus-free/pkg/quartus-free-quartus/
 export TERMINAL=kitty
 # Shortcuts
 
+alias l="clear"
+
 alias p="sudo pacman -S"
 alias pq="pacman -Qi"
 alias ps="pacman -Ss"
@@ -143,20 +145,4 @@ alias ys="yay -Ss"
 
 alias yu="yay -Syu"
 
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/opt/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/opt/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
 
