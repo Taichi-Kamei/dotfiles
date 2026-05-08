@@ -2,9 +2,6 @@
     "name": "laptop",
         "output": ["eDP-1","DP-1", "DP-4","DP-5", "DP-6", "DP-7", "DP-8"], 
         "modules-left": ["hyprland/workspaces"],
-        "hyprland/workspaces": {
-            "all-outputs": false
-        },
 
     "layer": "top", 
     "position": "top",
